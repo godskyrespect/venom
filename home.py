@@ -1,4 +1,4 @@
-    import streamlit as st
+import streamlit as st
 from pymongo import MongoClient
 
 # MongoDB 객을 설정
