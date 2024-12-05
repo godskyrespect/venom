@@ -17,8 +17,52 @@ teacher_db = client["teacher_page"]
 evaluation_collection = teacher_db["evaluation"]
 
 def main():
-    st.title("학생 성적 입력")
-    student_id = st.text_input("평가할 학생의 학번을 입력해주세요❣", key="student_id")
+    # 페이지 스타일 추가
+    st.markdown(
+        """
+        <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .main-title {
+            color: #333;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .sub-title {
+            color: #007bff;
+            font-size: 1.8em;
+            margin-top: 20px;
+        }
+        .stButton>button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .stButton>button:hover {
+            background-color: #0056b3;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    st.markdown("<div class='main-title' style='font-weight: lighter;'>학생 성적 관리</div>", unsafe_allow_html=True)
+    st.sidebar.image("image.png", use_container_width=True)
+
+    # 학생 성적 입력 섹션
+    student_id = st.text_input("🔍평가할 학생의 학번을 입력해주세요❣", key="student_id")
 
     if student_id:
         # 학생 학번으로 학생 정보 조회
@@ -65,8 +109,8 @@ def main():
                         update_mode='value_changed',
                         columns_auto_size_mode=ColumnsAutoSizeMode.FIT_CONTENTS,
                         editable=True,
-                        height=200,
-                        width=2000, 
+                        height=250,
+                        width=250, 
                         fit_columns_on_grid_load=False
                     )
 
