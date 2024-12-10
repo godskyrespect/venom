@@ -49,7 +49,7 @@ def main():
         unsafe_allow_html=True
     )
 
-    st.markdown("<div class='main-title' style='font-weight: bold;'>온양고등학교 관리자용 페이지</div>", unsafe_allow_html=True)
+    st.markdown("<div class='main-title' style='font-weight: bold;'>공주고등학교 관리자용 페이지</div>", unsafe_allow_html=True)
     st.sidebar.image("image.png", use_container_width=True)
     # 로그인과 회원가입 탭 분리
     tabs = st.tabs(["교사 로그인", "교사 회원가입"])
